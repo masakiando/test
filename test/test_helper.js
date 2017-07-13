@@ -1,3 +1,5 @@
+process.env.NODE_ENV = 'test';
+
 import jsdom from 'jsdom';
 import jquery from 'jquery';
 import TestUtils from 'react-addons-test-utils';
