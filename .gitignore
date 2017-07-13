@@ -57,3 +57,11 @@ typings/
 # dotenv environment variables file
 .env
 
+/node_modules
+bundle.js
+npm-debug.log
+.DS_Store
+
+# IntelliJ
+*.iml
+/.idea
