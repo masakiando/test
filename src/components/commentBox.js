@@ -5,7 +5,7 @@ class CommentBox extends React.Component {
     return (
       <div>
         <textarea />
-        <button></button>
+        <button>Submit Comment</button>
       </div>
     );
   }
