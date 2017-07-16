@@ -9,7 +9,7 @@ class CommentBox extends React.Component {
   }
 
   onChange(event) {
-
+    this.setState({ comment: event.target.value });
   }
 
   render() {
