@@ -12,11 +12,13 @@ import reducers from '../src/reducers';
 import chaiJquery from 'chai-jquery';
 
 // Set up testing environment to run like a browser in the command line
+//コマンドラインでブラウザのようにテスト環境を設定する
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
 global.window = global.document.defaultView;
 const $ = jquery(global.window);
 
 // build 'renderComponent' helper that should render a given react class
+//特定の反応クラスをレンダリングする 'renderComponent'ヘルパーを構築する
 function renderComponent(ComponentClass, props, state) {
   const componentInstance = TestUtils.renderIntoDocument(
     <Provider store={createStore(reducers, state)}>
@@ -24,10 +26,11 @@ function renderComponent(ComponentClass, props, state) {
     </Provider>
   );
 
-  return $(ReactDOM.findDOMNode(componentInstance)); // produces HTML
+  return $(ReactDOM.findDOMNode(componentInstance)); // produces HTML // HTMLを生成する
 }
 
 // Build helper for simulating events
+//イベントをシミュレートするヘルパーを構築する
 $.fn.simulate = function(eventName, value) {
   if (value) {
     this.val(value);
@@ -36,6 +39,7 @@ $.fn.simulate = function(eventName, value) {
 }
 
 // Set up chai-jquery
+// chai-jqueryを設定する
 chaiJquery(chai, chai.util, $);
 
 export { renderComponent, expect };
