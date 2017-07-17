@@ -1,6 +1,6 @@
 import { expect } from '../test_helper';
 import * as types from '../../src/actions/types';
-import * as index from '../../src/actions';//index
+import { saveComment } from '../../src/actions/commentActions';
 
 describe('actions', () => {
   describe('actions', () => {
