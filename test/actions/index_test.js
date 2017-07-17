@@ -1,5 +1,5 @@
 import { expect } from '../test_helper';
-import * as types from '../../src/actions/types';
+import * as types from '../../src/constants/actionTypes';
 import { saveComment } from '../../src/actions/commentActions';
 
 describe('actions', () => {
