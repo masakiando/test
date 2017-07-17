@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 const CommentList = (props) => {
@@ -8,6 +9,10 @@ const CommentList = (props) => {
   return (
     <ul className="comment-list">{list}</ul>
   );
+};
+
+CommentList.propTypes = {
+  comments: PropTypes.array.isRequired
 };
 
 function mapStateToProps(state) {
