@@ -1,4 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as commentActions from '../actions/commentActions';
 
 class CommentBox extends React.Component {
   constructor(props) {
@@ -15,7 +19,7 @@ class CommentBox extends React.Component {
 
   onSubmit(event) {
     event.preventDefault();
-
+    this.props.actions.saveComment(this.state.comment);
     this.setState({ comment: '' });
   }
 
@@ -29,4 +33,14 @@ class CommentBox extends React.Component {
   }
 }
 
-export default CommentBox;
+CommentBox.propTypes = {
+  actions: PropTypes.object.isRequired
+};
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(commentActions, dispatch)
+  };
+}
+
+export default connect(null, mapDispatchToProps)(CommentBox);
