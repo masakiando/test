@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CommentBox from './commentBox';
+import CommentBox from './CommentBox';
 import CommentList from './CommentList';
 
 export default class App extends Component {
