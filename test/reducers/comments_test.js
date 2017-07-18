@@ -4,8 +4,8 @@ import * as types from '../../src/constants/actionTypes';
 
 describe('Comments Reducer', () => {
   it('handles action with unknown type', () => {
-    expect(commentReducer()).to.eql([]);
-  });
+    expect(commentReducer(undefined, {})).to.eql([]);
+  });//{} actionを渡すとdefault state = [] returnされる
 
   it('handles action if type SAVE_COMMENT', () => {
    const action = { type: types.SAVE_COMMENT, payload: 'new comment'};
